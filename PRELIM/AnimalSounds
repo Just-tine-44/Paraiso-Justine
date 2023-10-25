@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Animals {
+
+    public static void main(String[] args) {
+
+        System.out.println("========== Activity One: What does an animal say? ==========" );
+
+        Scanner selected = new Scanner(System.in);
+
+        System.out.println("Select an animal: \n1. Horse\n2. Cat\n3. Bird\n4. Tiger\n");
+        System.out.println("Enter a selected number: ");
+        int selectedAnimal = selected.nextInt();
+
+        System.out.print("Animal: " + selectedAnimal);
+
+        class Horse {
+            public void say() {
+                System.out.println("\nNeighh Neighh Neigh~~");
+            }
+        }
+
+        class Cat {
+            public void say() {
+                System.out.println("\nMeow Meow Meow~~");
+            }
+        }
+
+        class Bird {
+            public void say() {
+                System.out.println("\nTweet Tweet Tweet~~");
+            }
+        }
+
+        class Tiger {
+            public void say() {
+                System.out.println("\nRoarr Roarr Roar~~");
+            }
+        }
+
+        if (selectedAnimal == 1) {
+            Horse horse = new Horse();
+            horse.say();
+        } else if (selectedAnimal == 2) {
+            Cat cat = new Cat();
+            cat.say();
+        } else if (selectedAnimal == 3) {
+            Bird bird = new Bird();
+            bird.say();
+        } else if (selectedAnimal == 4) {
+            Tiger tiger = new Tiger();
+            tiger.say();
+        } else {
+            System.out.print("\nInvalid");
+        }
+    }
+}
