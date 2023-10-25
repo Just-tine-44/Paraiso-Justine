@@ -1,0 +1,34 @@
+package student;
+import java.util.Scanner;
+
+public class studentAttributes {
+   
+   public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      
+      System.out.print("Enter First Name: ");
+      String first_name = scanner.nextLine();
+      
+      System.out.print("Enter Middle Name: ");
+      String middle_name = scanner.nextLine();
+      
+      System.out.print("Enter Last Name: ");
+      String last_name = scanner.nextLine();
+      
+      System.out.print("Enter Suffix: ");
+      String suffix = scanner.nextLine();
+      
+      
+      if(suffix.isEmpty()) {
+         suffix = "N/A";
+      }
+      
+      Student student = new Student(first_name, middle_name, last_name, suffix);
+      
+      System.out.println("\nFirst Name: " + student.getFirstName());
+      System.out.println("Middle Name: " + student.getMiddleName());
+      System.out.println("Last Name: " + student.getLastName());
+      System.out.println("Suffix: " + student.getSuffix());
+      System.out.println("Full Name: " + student.getFullName());
+   }
+}
