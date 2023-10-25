@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class PremlimProjectRouteParaiso {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double defDistanceViaBarili = 84.9;
+        double recDistanceViaDumanjug = 96.8;
+        double otherDistanceViaArgao = 101.5;
+
+        System.out.println("\nDefault Route: ");
+        System.out.println("Cebu City (Start)");
+        System.out.println("Minglanilla (Route 1)");
+        System.out.println("San Fernando (Route 2)");
+        System.out.println("Carcar (Route 3)");
+        System.out.println("Barili (Route 4.1)");
+        System.out.println("Dumanjug (Route 4.1.1)");
+        System.out.println("Alcantara (Route 4.1.2)");
+        System.out.println("Moalboal (End)");
+
+        System.out.print("\nIs Barili obstructed? (1 = Yes & 0 = No): ");
+        int bariliObstructed = input.nextInt();
+
+        if (bariliObstructed == 0) {
+            System.out.print("\nHow fast are you going?: ");
+            int speedRouteDef = input.nextInt();
+
+            System.out.println("\nMay your journey be filled with good company, great food, and amazing experiences.");
+
+            System.out.println("\nRecommended Route:");
+            System.out.println("Cebu City (Start)");
+            System.out.println("Minglanilla (Route 1)");
+            System.out.println("San Fernando (Route 2)");
+            System.out.println("Carcar (Route 3)");
+            System.out.println("Barili (Route 4.1)");
+            System.out.println("Dumanjug (Route 4.1.1)");
+            System.out.println("Alcantara (Route 4.1.2)");
+            System.out.println("Moalboal (End)");
+
+            double etaDef = defDistanceViaBarili / speedRouteDef;
+            int hoursDef = (int) etaDef;
+            int minutesDef = (int) ((etaDef - hoursDef) * 60);
+
+            System.out.println("\nAdditional Data:");
+            System.out.println("> Speed: " + speedRouteDef);
+            System.out.println("> Distance: " + defDistanceViaBarili);
+            System.out.println("ETA (Estimated time of arrival): " + hoursDef + " hours " + minutesDef + " minutes");
+
+        } else {
+            System.out.print("Is Dumanjug obstructed? (1 = Yes & 0 = No): ");
+            int dumanjugObstructed = input.nextInt();
+
+            int speedRouteRecom; 
+
+            System.out.print("\nHow fast are you going?: ");
+            speedRouteRecom = input.nextInt(); 
+
+            if (dumanjugObstructed == 0) {
+                System.out.println("\nTake care, travel safe, and have a wonderful trip.");
+
+                System.out.println("\nRecommended Route:");
+                System.out.println("Cebu City (Start)");
+                System.out.println("Minglanilla (Route 1)");
+                System.out.println("San Fernando (Route 2)");
+                System.out.println("Carcar (Route 3)");
+                System.out.println("Sibonga (Route 4.2)");
+                System.out.println("Dumanjug (Route 4.2.1)");
+                System.out.println("Alcantara (Route 4.2.2)");
+                System.out.println("Moalboal (End)");
+
+                double etaReco = recDistanceViaDumanjug / speedRouteRecom;
+                int hoursReco = (int) etaReco;
+                int minutesReco = (int) ((etaReco - hoursReco) * 60);
+
+                System.out.println("\nAdditional Data:");
+                System.out.println("> Speed: " + speedRouteRecom);
+                System.out.println("> Distance: " + recDistanceViaDumanjug);
+                System.out.println("ETA (Estimated time of arrival): " + hoursReco + " hours " + minutesReco + " minutes");
+
+            } else if (dumanjugObstructed == 1) {
+                System.out.println("\nMay your travels be filled with happy moments, laughter, and good health.");
+
+                System.out.println("\nAnother Route:");
+                System.out.println("Cebu City (Start)");
+                System.out.println("Minglanilla (Route 1)");
+                System.out.println("San Fernando (Route 2)");
+                System.out.println("Carcar (Route 3)");
+                System.out.println("Sibonga (Route 4.2)");
+                System.out.println("Argao (Route 5)");
+                System.out.println("Ronda (Route 5.1)");
+                System.out.println("Alcantara (Route 5.2)");
+                System.out.println("Moalboal (End)");
+
+                double etaOther = otherDistanceViaArgao / speedRouteRecom;
+                int hoursOther = (int) etaOther;
+                int minutesOther = (int) ((etaOther - hoursOther) * 60);
+
+                System.out.println("\nAdditional Data:");
+                System.out.println("> Speed: " + speedRouteRecom);
+                System.out.println("> Distance: " + otherDistanceViaArgao);
+                System.out.println("ETA (Estimated time of arrival): " + hoursOther + " hours " + minutesOther + " minutes");
+
+            } else {
+                System.out.println("Invalid input of Number. Please enter either 0 or 1.");
+            }
+        }
+    }
+}
