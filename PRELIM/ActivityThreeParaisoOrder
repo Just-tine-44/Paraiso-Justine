@@ -1,0 +1,81 @@
+import java.util.Scanner;
+import java.util.Random;
+
+   public class ActivityThreeParaiso {
+      
+      public static void main (String []args) {
+      
+         Scanner input = new Scanner (System.in);
+         Random random = new Random();
+         
+         int rand = random.nextInt(10000);
+         
+         double C1 = 100.00;
+         double C2 = 150.00;
+         double C3 = 200.00;
+         
+         double R1 = 35.00;
+         double R2 = 50.00;
+         
+
+       System.out.println("Menu: ");
+       System.out.println("1.C1 = Php " + C1);
+       System.out.println("2.C2 = Php " + C2);
+       System.out.println("3.C3 = Php " + C3);
+       System.out.println("Add-ons: ");
+       System.out.println("4.R1 = Php " + R1);
+       System.out.println("5.R2 = Php " + R2);
+       
+       System.out.print("\nPick a number in Menu (Only 1-3): ");
+       int menu = input.nextInt();
+       
+       System.out.print("Quantity of your order Menu: ");
+       int quantityMenu = input.nextInt();
+       
+       System.out.print("\nChoose an add-ons (Only 4-5): ");
+       int addOn = input.nextInt();
+       
+       System.out.print("Quantity of your add on: ");
+       int quantityAddOn  = input.nextInt();
+       
+       double totalPrice = 0.00;
+       
+       switch(menu) {
+       case 1:
+         totalPrice = totalPrice + (C1 * quantityMenu);
+         break;
+       case 2:
+         totalPrice = totalPrice + (C2 * quantityMenu);
+         break;
+       case 3:
+         totalPrice = totalPrice + (C3 * quantityMenu);
+         break;
+       default:
+        System.out.print("Invalid Option!!!");
+         }
+         
+       switch(addOn){
+         case 4:
+         totalPrice = totalPrice + (R1 * quantityAddOn);
+         break;
+         case 5:
+         totalPrice = totalPrice + (R2 * quantityAddOn);
+         break;
+         default:
+         System.out.println("Invalid Option!!!");
+       }
+       
+         double conversationDollarRate = 56.00;
+         double totalPriceDollars = totalPrice / conversationDollarRate;
+         
+         totalPriceDollars = (double) Math.round(totalPriceDollars * 100)/100;
+
+         System.out.println("\n================Receipt=================");
+         System.out.println("||Quantity of your order Menu: " + quantityMenu + "      ||");
+         System.out.println("||Quantity of your add-on: " + quantityAddOn + "          ||");
+         System.out.println("||Total Price: Php " + totalPrice + "              ||");
+         System.out.println("||Total Price in Php to Dollar: " + totalPriceDollars + "  ||");
+         System.out.println("||Order Code: " + rand + "                    ||");
+         System.out.println("========================================");
+      }
+   }
